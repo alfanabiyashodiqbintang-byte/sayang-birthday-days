@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <main className="w-screen h-screen bg-[#060010]">
       {!showGallery ? (
-        <InteractionFlow onComplete={() => setShowGallery(true)} />
+        <InteractionFlow onFlowComplete={() => setShowGallery(true)} />
       ) : (
         <>
           <audio src="/pretty.mp3" autoPlay loop className="hidden" />
@@ -47,4 +47,3 @@ export default function Home() {
     </main>
   );
 }
-
