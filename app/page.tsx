@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <main className="w-screen h-screen bg-[#060010]">
       {!showGallery ? (
-        <InteractionFlow onFlowComplete={() => setShowGallery(true)} />
+        <InteractionFlow onComplete={() => setShowGallery(true)} />
       ) : (
         <>
           <audio src="/pretty.mp3" autoPlay loop className="hidden" />
