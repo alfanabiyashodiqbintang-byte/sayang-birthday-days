@@ -1,16 +1,16 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, X, Sparkles, Volume2, VolumeX } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 interface InteractionFlowProps {
+  onFlowComplete?: () => void;
   onComplete?: () => void;
 }
 
-export default function InteractionFlow({ onComplete }: InteractionFlowProps) {
+export default function InteractionFlow({ onFlowComplete, onComplete }: InteractionFlowProps) {
   const [step, setStep] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   const steps = [
     {
@@ -29,6 +29,7 @@ export default function InteractionFlow({ onComplete }: InteractionFlowProps) {
     if (step < steps.length - 1) {
       setStep(step + 1);
     } else {
+      if (onFlowComplete) onFlowComplete();
       if (onComplete) onComplete();
     }
   };
