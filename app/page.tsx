@@ -32,6 +32,7 @@ export default function Home() {
       ) : (
         <>
           <audio src="/pretty.mp3" autoPlay loop className="hidden" />
+         {/* @ts-ignore */}
           <DomeGallery
             images={userImages}
             fit={0.8}
